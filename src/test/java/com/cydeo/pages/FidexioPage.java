@@ -1,6 +1,8 @@
 package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -39,6 +41,26 @@ public class FidexioPage {
 
     @FindBy (xpath = "//p[@class='alert alert-danger']")
     public WebElement errorMessage;
+
+    @FindBy (xpath = "//a[.='Reset Password']")
+    public WebElement resetPassword;
+
+    @FindBy (xpath = "//button[.='Confirm']")
+    public WebElement buttonConfirm;
+
+    public boolean isAlertPresent()
+    {
+        try
+        {
+            Driver.getDriver().switchTo().alert();
+            return true;
+        }   // try
+        catch (NoAlertPresentException Ex)
+        {
+            return false;
+        }   // catch
+
+    }   // isAlertPresent()
 
 
 
