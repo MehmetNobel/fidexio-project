@@ -37,6 +37,9 @@ public class FidexioPage {
     @FindBy (xpath = "//span[.='Inbox']")
     public WebElement inBoxButton;
 
+    @FindBy (xpath = "//p[@class='alert alert-danger']")
+    public WebElement errorMessage;
+
 
 
 

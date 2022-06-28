@@ -38,11 +38,14 @@ public class FidexioStepDefinitions {
 
         Assert.assertTrue(fidexioPage.inBoxButton.isDisplayed());
 
-
-
-
     }
 
 
+    @Then("user see the error message")
+    public void userSeeTheErrorMessage() {
 
+        Assert.assertTrue(fidexioPage.errorMessage.isDisplayed());
+
+
+    }
 }
