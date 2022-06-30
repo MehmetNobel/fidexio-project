@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,8 +25,12 @@ public class FidexioStepDefinitions {
     public void userEntersTheAndPassword(String arg0, String arg1) {
 
        fidexioPage.emailInputBox.sendKeys(arg0);
-       fidexioPage.passwordInputBox.sendKeys(arg1);
-       fidexioPage.submitButton.click();
+        System.out.println("fidexioPage.emailInputBox.getText() = " + fidexioPage.emailInputBox.getText());
+        fidexioPage.passwordInputBox.sendKeys(arg1);
+        System.out.println("fidexioPage.passwordInputBox.getText() = " + fidexioPage.passwordInputBox.getText());
+        fidexioPage.submitButton.click();
+
+
 
     }
 
@@ -55,11 +60,18 @@ public class FidexioStepDefinitions {
     @Then("user see the alert")
     public void userSeeTheAlert() {
 
-        WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
+       // WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
 
-         wait.until(ExpectedConditions.alertIsPresent());
+        // wait.until(ExpectedConditions.alertIsPresent());
 
-        Assert.assertTrue(fidexioPage.isAlertPresent());
+        // Alert alert=Driver.getDriver().switchTo().alert();
+
+        //System.out.println("alert.getText() = " + alert.getText());
+        String message = Driver.getDriver().findElement(By.cssSelector("#login")).getAttribute("validationMessage");
+        System.out.println("message = " + message);
+
+
+        // Assert.assertTrue(fidexioPage.isAlertPresent());
 
 
     }
