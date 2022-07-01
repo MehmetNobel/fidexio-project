@@ -30,8 +30,6 @@ public class FidexioStepDefinitions {
         System.out.println("fidexioPage.passwordInputBox.getText() = " + fidexioPage.passwordInputBox.getText());
         fidexioPage.submitButton.click();
 
-
-
     }
 
 
@@ -43,7 +41,6 @@ public class FidexioStepDefinitions {
 
     @Then("user is on the homepage")
     public void userIsOnTheHomepage() {
-
         Assert.assertTrue(fidexioPage.inBoxButton.isDisplayed());
 
     }
@@ -54,25 +51,15 @@ public class FidexioStepDefinitions {
 
         Assert.assertTrue(fidexioPage.errorMessage.isDisplayed());
 
-
     }
 
-    @Then("user see the alert")
+    @Then("user see the message")
     public void userSeeTheAlert() {
 
-       // WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
-
-        // wait.until(ExpectedConditions.alertIsPresent());
-
-        // Alert alert=Driver.getDriver().switchTo().alert();
-
-        //System.out.println("alert.getText() = " + alert.getText());
-        String message = Driver.getDriver().findElement(By.cssSelector("#login")).getAttribute("validationMessage");
-        System.out.println("message = " + message);
-
-
-        // Assert.assertTrue(fidexioPage.isAlertPresent());
-
+        String actualMessage = Driver.getDriver().findElement(By.cssSelector("#login")).getAttribute("validationMessage");
+        System.out.println("message = " + actualMessage);
+        String expectedMessage="Lütfen bu alanı doldurun.";
+        Assert.assertEquals(expectedMessage,actualMessage);
 
     }
 
@@ -97,6 +84,16 @@ public class FidexioStepDefinitions {
 
         fidexioPage.emailInputBox.sendKeys(arg0);
         fidexioPage.passwordInputBox.sendKeys(arg1+Keys.ENTER);
+
+    }
+
+    @Then("user see that password is in bullet signs by default")
+    public void userSeeThatPasswordIsInBulletSignsByDefault() {
+
+        String actualAttributeType = fidexioPage.passwordBulletSign.getAttribute("type");
+        String expectedAttributeType = "password";
+
+        Assert.assertEquals(expectedAttributeType,actualAttributeType);
 
     }
 }

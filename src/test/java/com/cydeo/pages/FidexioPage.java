@@ -48,6 +48,12 @@ public class FidexioPage {
     @FindBy (xpath = "//button[.='Confirm']")
     public WebElement buttonConfirm;
 
+    @FindBy (css = "#password")
+    public WebElement passwordBulletSign;
+
+
+
+
     public boolean isAlertPresent()
     {
         try
