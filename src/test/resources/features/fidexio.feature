@@ -2,16 +2,27 @@
 Feature: Login feature for pos manager and sales manager
 
   @FIDEX-357 @Fidexio
-  Scenario: Verify that pos manager enters the login page with valid credentials.
+  Scenario Outline: Verify that pos manager enters the login page with valid credentials.
     Given user is on the login page
-    When user enters the "posmanager10@info.com" and password "posmanager"
+    When user enters the "<username>" and password "<password>"
     Then user is on the homepage
 
+    Examples:
+      | username              |  | password   |
+      | posmanager15@info.com |  | posmanager |
+      | posmanager16@info.com |  | posmanager |
+
+
   @FIDEX-358 @Fidexio
-  Scenario: Verify that sales manager enters the login page with valid credentials.
+  Scenario Outline: Verify that sales manager enters the login page with valid credentials.
     Given user is on the login page
-    When user enters the "salesmanager10@info.com" and password "salesmanager"
+    When user enters the "<username>" and password "<password>"
     Then user is on the homepage
+
+    Examples:
+      | username                |  | password     |
+      | salesmanager15@info.com |  | salesmanager |
+      | salesmanager16@info.com |  | salesmanager |
 
   @FIDEX-359 @Fidexio
   Scenario: Wrong login/password" should be displayed for invalid (valid username-invalid password) credentials
