@@ -57,6 +57,9 @@ public class FidexioPage {
     @FindBy (xpath = "//a[.='Log out']")
     public WebElement logoutStep2Button;
 
+    @FindBy (xpath = "//h4[.='Odoo Session Expired']")
+    public WebElement odooSessionMessage;
+
 
 
 

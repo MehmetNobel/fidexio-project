@@ -47,4 +47,15 @@ public class FidexioStepDefinitionsLogout {
 
 
     }
+
+    @Then("verify that user cannot go back to the homepage")
+    public void verifyThatUserCannotGoBackToTheHomepage() {
+
+        Driver.getDriver().navigate().back();
+
+        Assert.assertTrue(fidexioPage.odooSessionMessage.isDisplayed());
+
+    }
+
+
 }
