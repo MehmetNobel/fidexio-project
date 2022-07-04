@@ -51,22 +51,15 @@ public class FidexioPage {
     @FindBy (css = "#password")
     public WebElement passwordBulletSign;
 
+    @FindBy (css = "span[class='oe_topbar_name']")
+    public WebElement logoutStep1Button;
+
+    @FindBy (xpath = "//a[.='Log out']")
+    public WebElement logoutStep2Button;
 
 
 
-    public boolean isAlertPresent()
-    {
-        try
-        {
-            Driver.getDriver().switchTo().alert();
-            return true;
-        }   // try
-        catch (NoAlertPresentException Ex)
-        {
-            return false;
-        }   // catch
 
-    }   // isAlertPresent()
 
 
 
