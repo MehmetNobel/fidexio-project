@@ -56,7 +56,8 @@ public class FidexioStepDefinitions {
     @Then("user see the message")
     public void userSeeTheAlert() {
 
-        String actualMessage = Driver.getDriver().findElement(By.cssSelector("#login")).getAttribute("validationMessage");
+        String actualMessage = Driver.getDriver().findElement(By.cssSelector("#login")).
+                getAttribute("validationMessage");
         System.out.println("message = " + actualMessage);
         String expectedMessage="Lütfen bu alanı doldurun.";
         Assert.assertEquals(expectedMessage,actualMessage);
