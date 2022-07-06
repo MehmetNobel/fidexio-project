@@ -19,7 +19,8 @@ public class FidexioStepDefinitionsLogin {
     @When("user enters the {string} and password {string}")
     public void userEntersTheAndPassword(String arg0, String arg1) {
 
-       fidexioPage.emailInputBox.sendKeys(arg0);
+        Driver.getDriver().get(ConfigurationReader.getProperty("url.fidexio"));
+        fidexioPage.emailInputBox.sendKeys(arg0);
         System.out.println("fidexioPage.emailInputBox.getText() = " + fidexioPage.emailInputBox.getText());
         fidexioPage.passwordInputBox.sendKeys(arg1);
         System.out.println("fidexioPage.passwordInputBox.getText() = " + fidexioPage.passwordInputBox.getText());
@@ -54,8 +55,8 @@ public class FidexioStepDefinitionsLogin {
         String actualMessage = Driver.getDriver().findElement(By.cssSelector("#login")).
                 getAttribute("validationMessage");
         System.out.println("message = " + actualMessage);
-        String expectedMessage="Lütfen bu alanı doldurun.";
-        Assert.assertEquals(expectedMessage,actualMessage);
+        String expectedMessage = "Lütfen bu alanı doldurun.";
+        Assert.assertEquals(expectedMessage, actualMessage);
 
     }
 
@@ -79,7 +80,7 @@ public class FidexioStepDefinitionsLogin {
     public void userEntersTheAndPasswordAndHitsTheEnterKey(String arg0, String arg1) {
 
         fidexioPage.emailInputBox.sendKeys(arg0);
-        fidexioPage.passwordInputBox.sendKeys(arg1+Keys.ENTER);
+        fidexioPage.passwordInputBox.sendKeys(arg1 + Keys.ENTER);
 
     }
 
@@ -89,7 +90,7 @@ public class FidexioStepDefinitionsLogin {
         String actualAttributeType = fidexioPage.passwordBulletSign.getAttribute("type");
         String expectedAttributeType = "password";
 
-        Assert.assertEquals(expectedAttributeType,actualAttributeType);
+        Assert.assertEquals(expectedAttributeType, actualAttributeType);
 
     }
 }
