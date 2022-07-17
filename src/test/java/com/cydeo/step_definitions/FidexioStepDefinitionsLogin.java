@@ -45,7 +45,7 @@ public class FidexioStepDefinitionsLogin {
     @Then("user see the error message")
     public void userSeeTheErrorMessage() {
 
-        Assert.assertTrue(fidexioPage.errorMessage.isDisplayed());
+        Assert.assertTrue(fidexioPage.inBoxButton.isDisplayed());
 
     }
 
@@ -93,4 +93,6 @@ public class FidexioStepDefinitionsLogin {
         Assert.assertEquals(expectedAttributeType, actualAttributeType);
 
     }
+
+
 }

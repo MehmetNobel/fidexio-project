@@ -15,6 +15,56 @@ public class FidexioPage {
 
     }
 
+    @FindBy (xpath = "//a[@href=\"/web#menu_id=136&action=153\"]")
+    public WebElement vehicleModelButton;
+
+    @FindBy (xpath = "//a[.=\"More \"]")
+    public WebElement moreButton;
+
+    @FindBy (xpath = "//a[@href=\"/web#menu_id=134&action=\"]")
+    public WebElement fleetButton;
+
+    @FindBy (xpath = "//button[@accesskey='c']")
+    public WebElement createButton;
+
+    @FindBy (xpath = "//input[@class='o_field_char o_field_widget o_input o_required_modifier']")
+    public WebElement inputModelName;
+
+    @FindBy (xpath = "//input[@class=\"o_input ui-autocomplete-input\"]")
+    public WebElement inputMakeName;
+
+    @FindBy (xpath = "//button[@accesskey=\"s\"]")
+    public WebElement saveVehicleButton;
+
+    @FindBy (xpath = "//span[.='Create']")
+    public WebElement saveButtonAfter;
+
+    @FindBy (xpath = "//button[@accesskey=\"a\"]")
+    public WebElement editButton;
+
+    @FindBy (xpath = "//a[@href='/web#menu_id=147&action=164']")
+    public WebElement vehiclesFuelLogsButton;
+
+    @FindBy (xpath = "//input[@class=\"o_input ui-autocomplete-input\"]")
+    public WebElement vehicleDetailsButton;
+
+    @FindBy (css = "input[name=\"liter\"]")
+    public WebElement literDetailButton;
+
+    @FindBy (css = "input[name=\"price_per_liter\"]")
+    public WebElement pricePerLiterBox;
+
+
+
+
+
+
+
+
+
+
+
+
     @FindBy (css = "input[name='login']")
     public WebElement emailInputBox;
 

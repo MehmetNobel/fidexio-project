@@ -32,7 +32,7 @@ public class Hooks {
         }
 
         //this will automatically close the driver after every scenario
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
         //System.out.println("====Closing browser using cucumber @After");
     }
