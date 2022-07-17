@@ -1,7 +1,7 @@
 @FIDEX-525
 Feature:As a POSMANAGER, I should be able to enter a new Fuel Log for the vehicle
 
-  Background: login should be performed for valid credentials
+  Background: login should be performed for valid credentials.
     Given user is on the login page
     When user enters the "posmanager10@info.com" and password "posmanager"
     Then user is on the homepage
